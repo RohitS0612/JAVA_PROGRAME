@@ -15,12 +15,12 @@ public class Quadraticroot {
 		if (d > 0.0) {
 			double r1 = (-b + Math.pow(d, 0.5)) / (2.0 * a);
 			double r2 = (-b - Math.pow(d, 0.5)) / (2.0 * a);
-			System.out.println("The roots are " + r1 + " and " + r2);
+			System.out.printf("\nThe roots are %.2f", r1 , " and %.2f" , r2);
 		}
 
 		else if (d == 0.0) {
 			double r1 = -b / (2.0);
-			System.out.println("the root is " + r1);
+			System.out.printf("\nthe root is %.2f" , r1);
 		} else {
 			System.out.println("Roots are imaginary.");
 		}

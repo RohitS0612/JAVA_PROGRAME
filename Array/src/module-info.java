@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author sheta
- *
- */
-module Array {
-}

@@ -1,32 +1,37 @@
-import java.util.Arrays;
 import java.util.Scanner;
-public class Palindrome{
-    public static void main(String[] arrgs){
+
+class Palindrome{
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int arr[] = new int[6];
-        System.out.println("Eneter the Array elements : ");
+        System.out.println("Enter elemnets in array : ");
         for(int i=0; i<arr.length; i++){
             arr[i]=sc.nextInt();
         }
-        palindrome(arr);
-        System.out.println(Arrays.toString(arr));
-        sc.close();
+        palin(arr);
+
+        
     }
 
-    static void palindrome(int[] arr){
-        // int size = arr.length;
-        // int b[] = new int[size];
+    static void palin(int[] arr){
+        int temp[] = new int[arr.length];
+        for(int i=0; i<temp.length; i++){
+            temp[i]=arr[i];
+        }
 
-        int b[] = new int[arr.length];
+        int mid = arr.length/2;
+        int end = arr.length-1;
 
-        for(int i=0; i<b.length; i++){
-            b[i] = arr[i];
+        for(int i=0; i<mid; i++){
+            int t = temp[i];
+            temp[i] = temp[end];
+            temp[end] = t;
+            end--;
         }
         boolean flag = false;
         for(int i=0; i<arr.length; i++){
-            if(arr[i] == b[i]){
+            if(arr[i] == temp[i]){
                 flag = true;
-                break;
             }
         }
 
@@ -34,7 +39,8 @@ public class Palindrome{
             System.out.println("Palindrome");
         }
         else{
-            System.out.println("Not palindrom");
+            System.out.println("Not palindrome");
         }
+
     }
 }
